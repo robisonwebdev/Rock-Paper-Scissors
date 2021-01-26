@@ -1,6 +1,6 @@
 function computerPlay() {
-    let gamePieces = ['Rock', 'Paper', 'Scissors'];
-    let randomGamePiece = Math.floor(Math.random() * 3);
+    const gamePieces = ['Rock', 'Paper', 'Scissors'];
+    const randomGamePiece = Math.floor(Math.random() * 3);
 
     return gamePieces[randomGamePiece];
 }
