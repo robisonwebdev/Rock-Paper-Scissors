@@ -1,8 +1,8 @@
 function computerPlay() {
     const gamePieces = ['Rock', 'Paper', 'Scissors'];
-    const randomGamePiece = Math.floor(Math.random() * 3);
+    const random = Math.floor(Math.random() * 3);
 
-    return gamePieces[randomGamePiece];
+    return gamePieces[random];
 }
 
 function playSingleRound(playerSelections, computerSelection) {
