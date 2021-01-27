@@ -99,6 +99,4 @@ function game() {
 game();
 
 
-
-// Track score
 // Reset
