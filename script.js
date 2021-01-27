@@ -43,35 +43,46 @@ function computerPlay() {
 // Paper beats rock
 function compareResults(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
-        displayWinner(undefined, undefined, undefined, true);
+        roundWinner(undefined, undefined, undefined, true);
         scoreTracker(0, 0);
     } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
-        displayWinner('Player', playerSelection, computerSelection);
+        roundWinner('Player', playerSelection, computerSelection);
         scoreTracker(1, 0);
     } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
-        displayWinner('Player', playerSelection, computerSelection);
+        roundWinner('Player', playerSelection, computerSelection);
         scoreTracker(1, 0);
     } else if (playerSelection === 'paper' && computerSelection === 'rock') {
-        displayWinner('Player', playerSelection, computerSelection);
+        roundWinner('Player', playerSelection, computerSelection);
         scoreTracker(1, 0);
     } else if (computerSelection === 'rock' && playerSelection === 'scissors') {
-        displayWinner('Computer', computerSelection, playerSelection);
+        roundWinner('Computer', computerSelection, playerSelection);
         scoreTracker(0, 1);
     } else if (computerSelection === 'scissors' && playerSelection === 'paper') {
-        displayWinner('Computer', computerSelection, playerSelection);
+        roundWinner('Computer', computerSelection, playerSelection);
         scoreTracker(0, 1);
     } else if (computerSelection === 'paper' && playerSelection === 'rock') {
-        displayWinner('Computer', computerSelection, playerSelection);
+        roundWinner('Computer', computerSelection, playerSelection);
         scoreTracker(0, 1);
     }
 }
 
-// Display Winner
-function displayWinner(winner, winnerHand, loserHand, tie = false) {
+// Display winner of round
+function roundWinner(winner, winnerHand, loserHand, tie = false) {
     if (tie) {
-        return alert("Tie game!");
+        return console.log("Tie game!");
     } else if (winner != undefined) {
-        return alert(`${winner} wins! ${winnerHand.charAt(0).toUpperCase() + winnerHand.slice(1)} beats ${loserHand}!`)
+        return console.log(`${winner} wins! ${winnerHand.charAt(0).toUpperCase() + winnerHand.slice(1)} beats ${loserHand}!`)
+    }
+}
+
+// Game winner
+function gameWinner() {
+    if (playerScore === computerScore) {
+        console.log('Tie game! No Winners');
+    } else if (playerScore > computerScore) {
+        console.log('Player wins the game!');
+    } else if (computerScore > playerScore) {
+        console.log('Computer wins the game!');
     }
 }
 
@@ -94,6 +105,8 @@ function game() {
     for (let i = 0; i < 5; i++) {
         playRound();
     }
+
+    gameWinner();
 }
 
 game();
