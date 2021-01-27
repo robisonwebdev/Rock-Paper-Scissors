@@ -40,20 +40,28 @@ function computerPlay() {
 
 function compareResults(playerSelections, computerSelection) {
     if (playerSelections === computerSelection) {
-        console.log('Tie!');
-        console.log(`P ${playerSelections} | C ${computerSelection}`);
+        displayWinner(undefined, undefined, undefined, undefined, true);
     } else if (playerSelections === 'rock' && computerSelection === 'scissors') {
-        console.log(`Player's ${playerSelections} beats Computer's ${computerSelection}`);
+        displayWinner('Player', playerSelections, 'Computer', computerSelection);
     } else if (playerSelections === 'scissors' && computerSelection === 'paper') {
-        console.log(`Player's ${playerSelections} beats Computer's ${computerSelection}`);
+        displayWinner('Player', playerSelections, 'Computer', computerSelection);
     } else if (playerSelections === 'paper' && computerSelection === 'rock') {
-        console.log(`Player's ${playerSelections} beats Computer's ${computerSelection}`);
+        displayWinner('Player', playerSelections, 'Computer', computerSelection);
     } else if (computerSelection === 'rock' && playerSelections === 'scissors') {
-        console.log(`Computer's ${computerSelection} beats Player's ${playerSelections}`);
+        displayWinner('Computer', computerSelection, 'Player', playerSelections);
     } else if (computerSelection === 'scissors' && playerSelections === 'paper') {
-        console.log(`Computer's ${computerSelection} beats Player's ${playerSelections}`);
+        displayWinner('Computer', computerSelection, 'Player', playerSelections);
     } else if (computerSelection === 'paper' && playerSelections === 'rock') {
-        console.log(`Computer's ${computerSelection} beats Player's ${playerSelections}`);
+        displayWinner('Computer', computerSelection, 'Player', playerSelections);
+    }
+}
+
+// Display Winner
+function displayWinner(winner, winnerHand, loser, loserHand, tie = false) {
+    if (tie) {
+        alert("Tie game!");
+    } else if (winner != undefined) {
+        alert(`${winner} Wins! ${winner}'s ${winnerHand}, beats ${loser}'s ${loserHand}!`)
     }
 }
 
