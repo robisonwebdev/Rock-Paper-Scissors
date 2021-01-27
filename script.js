@@ -1,18 +1,27 @@
-// Get player input
-// Display a prompt asking user to pick between rock, paper, or scissors
-// Save selection in variable
-
+// Get the player's input and send if off to be validated
+// Once validated, return choice
 function playerPlay() {
-    const playerChoice = prompt('Select Rock, Paper, or Scissors').toLocaleLowerCase();
+    const playerChoice = prompt('Select Rock, Paper, or Scissors');    
     
-    return playerChoice;
+    return gamePieceValidation(playerChoice);
 }
 
+// Validates player input by converting to lower case 
+// and checking with switch statement, if not valid prompt again.
 function gamePieceValidation(gamePiece) {
-    if (gamePiece == 'rock' || gamePiece == 'paper' || gamePiece == 'scissors') {
-       console.log('Correct Option!');
-    } else {
-        console.log('Invalid choice!');
+    while(true) {
+        gamePiece = gamePiece.toLowerCase();
+
+        switch (gamePiece) {
+            case 'rock':
+                return gamePiece;
+            case 'paper':
+                return gamePiece;
+            case 'scissors':
+                return gamePiece;
+            default:
+                gamePiece = prompt('Invalid option, pick again.');
+        }
     }
 }
 
@@ -41,3 +50,4 @@ function playRound(playerSelections, computerSelection) {
 
 
 // playRound(playerPlay(), computerPlay());
+playerPlay()
