@@ -3,7 +3,17 @@
 // Save selection in variable
 
 function playerPlay() {
-    return prompt('Select Rock, Paper, or Scissors').toLocaleLowerCase();
+    const playerChoice = prompt('Select Rock, Paper, or Scissors').toLocaleLowerCase();
+    
+    return playerChoice;
+}
+
+function gamePieceValidation(gamePiece) {
+    if (gamePiece == 'rock' || gamePiece == 'paper' || gamePiece == 'scissors') {
+       console.log('Correct Option!');
+    } else {
+        console.log('Invalid choice!');
+    }
 }
 
 // Get computer input
@@ -30,4 +40,4 @@ function playRound(playerSelections, computerSelection) {
 // Reset
 
 
-playRound(playerPlay(), computerPlay());
+// playRound(playerPlay(), computerPlay());
