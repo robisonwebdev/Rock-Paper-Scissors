@@ -25,10 +25,7 @@ function gamePieceValidation(gamePiece) {
     }
 }
 
-// Get computer input
-// Have computer pick randomly between rock, paper, or scissors
-// Save selection in variable
-
+// Computer selects a random option from gamePieces array and returns it
 function computerPlay() {
     const gamePieces = ['rock', 'paper', 'scissors'];
     const random = Math.floor(Math.random() * 3);
@@ -40,8 +37,30 @@ function computerPlay() {
 // Rock beats scissors
 // Scissors beats paper
 // Paper beats rock
-function playRound(playerSelections, computerSelection) {
-    
+
+function compareResults(playerSelections, computerSelection) {
+    if (playerSelections === computerSelection) {
+        console.log('Tie!');
+        console.log(`P ${playerSelections} | C ${computerSelection}`);
+    } else if (playerSelections === 'rock' && computerSelection === 'scissors') {
+        console.log(`Player's ${playerSelections} beats Computer's ${computerSelection}`);
+    } else if (playerSelections === 'scissors' && computerSelection === 'paper') {
+        console.log(`Player's ${playerSelections} beats Computer's ${computerSelection}`);
+    } else if (playerSelections === 'paper' && computerSelection === 'rock') {
+        console.log(`Player's ${playerSelections} beats Computer's ${computerSelection}`);
+    } else if (computerSelection === 'rock' && playerSelections === 'scissors') {
+        console.log(`Computer's ${computerSelection} beats Player's ${playerSelections}`);
+    } else if (computerSelection === 'scissors' && playerSelections === 'paper') {
+        console.log(`Computer's ${computerSelection} beats Player's ${playerSelections}`);
+    } else if (computerSelection === 'paper' && playerSelections === 'rock') {
+        console.log(`Computer's ${computerSelection} beats Player's ${playerSelections}`);
+    }
+}
+
+function playRound() {
+    // Compare user/computer
+    compareResults(playerPlay(), computerPlay());
+    // Display winner
 }
 
 // Display winner
@@ -49,4 +68,4 @@ function playRound(playerSelections, computerSelection) {
 // Reset
 
 
-// playRound(playerPlay(), computerPlay());
+playRound();
