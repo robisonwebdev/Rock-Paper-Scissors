@@ -1,3 +1,7 @@
+// Global Score Tracker
+let playerScore = 0;
+let computerScore = 0;
+
 // Get the player's input and send if off to be validated
 // Once validated, return choice
 function playerPlay() {
@@ -64,9 +68,17 @@ function displayWinner(winner, winnerHand, loserHand, tie = false) {
     }
 }
 
+// Score Tracker
+function scoreTracker() {
+    
+}
+
 // Starts a single round of the game by calling compareResults
 function playRound() {
-    compareResults(playerPlay(), computerPlay());
+    let playerSelection = playerPlay();
+    let computerSelection = computerPlay();
+
+    compareResults(playerSelection, computerSelection);
 }
 
 function game() {
@@ -75,7 +87,7 @@ function game() {
     }
 }
 
-game();
+playRound();
 
 
 
