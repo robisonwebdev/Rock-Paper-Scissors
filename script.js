@@ -90,6 +90,8 @@ function gameWinner() {
 function scoreTracker(player, computer) {
     playerScore += player;
     computerScore += computer;
+
+    console.log(`Player: ${playerScore} | Computer: ${computerScore}`);
 }
 
 // Starts a single round of the game by calling compareResults
@@ -98,7 +100,6 @@ function playRound() {
     let computerSelection = computerPlay();
 
     compareResults(playerSelection, computerSelection);
-    console.log(`Player: ${playerScore} | Computer: ${computerScore}`);
 }
 
 function game() {
