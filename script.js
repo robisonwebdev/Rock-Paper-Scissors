@@ -21,9 +21,8 @@ function computerPlay() {
 // Rock beats scissors
 // Scissors beats paper
 // Paper beats rock
-function playSingleRound(playerSelections, computerSelection) {
-    console.log(playerSelections);
-    console.log(computerSelection)
+function playRound(playerSelections, computerSelection) {
+    
 }
 
 // Display winner
@@ -31,4 +30,4 @@ function playSingleRound(playerSelections, computerSelection) {
 // Reset
 
 
-playSingleRound(playerPlay(), computerPlay());
+playRound(playerPlay(), computerPlay());
