@@ -39,28 +39,28 @@ function computerPlay() {
 // Paper beats rock
 function compareResults(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
-        displayWinner(undefined, undefined, undefined, undefined, true);
+        displayWinner(undefined, undefined, undefined, true);
     } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
-        displayWinner('Player', playerSelection, 'Computer', computerSelection);
+        displayWinner('Player', playerSelection, computerSelection);
     } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
-        displayWinner('Player', playerSelection, 'Computer', computerSelection);
+        displayWinner('Player', playerSelection, computerSelection);
     } else if (playerSelection === 'paper' && computerSelection === 'rock') {
-        displayWinner('Player', playerSelection, 'Computer', computerSelection);
+        displayWinner('Player', playerSelection, computerSelection);
     } else if (computerSelection === 'rock' && playerSelection === 'scissors') {
-        displayWinner('Computer', computerSelection, 'Player', playerSelection);
+        displayWinner('Computer', computerSelection, playerSelection);
     } else if (computerSelection === 'scissors' && playerSelection === 'paper') {
-        displayWinner('Computer', computerSelection, 'Player', playerSelection);
+        displayWinner('Computer', computerSelection, playerSelection);
     } else if (computerSelection === 'paper' && playerSelection === 'rock') {
-        displayWinner('Computer', computerSelection, 'Player', playerSelection);
+        displayWinner('Computer', computerSelection, playerSelection);
     }
 }
 
 // Display Winner
-function displayWinner(winner, winnerHand, loser, loserHand, tie = false) {
+function displayWinner(winner, winnerHand, loserHand, tie = false) {
     if (tie) {
         alert("Tie game!");
     } else if (winner != undefined) {
-        alert(`${winner} Wins! ${winner}'s ${winnerHand}, beats ${loser}'s ${loserHand}!`)
+        alert(`${winner} wins! ${winnerHand.charAt(0).toUpperCase() + winnerHand.slice(1)} beats ${loserHand}!`)
     }
 }
 
