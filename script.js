@@ -44,33 +44,41 @@ function computerPlay() {
 function compareResults(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         displayWinner(undefined, undefined, undefined, true);
+        scoreTracker(0, 0);
     } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
         displayWinner('Player', playerSelection, computerSelection);
+        scoreTracker(1, 0);
     } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
         displayWinner('Player', playerSelection, computerSelection);
+        scoreTracker(1, 0);
     } else if (playerSelection === 'paper' && computerSelection === 'rock') {
         displayWinner('Player', playerSelection, computerSelection);
+        scoreTracker(1, 0);
     } else if (computerSelection === 'rock' && playerSelection === 'scissors') {
         displayWinner('Computer', computerSelection, playerSelection);
+        scoreTracker(0, 1);
     } else if (computerSelection === 'scissors' && playerSelection === 'paper') {
         displayWinner('Computer', computerSelection, playerSelection);
+        scoreTracker(0, 1);
     } else if (computerSelection === 'paper' && playerSelection === 'rock') {
         displayWinner('Computer', computerSelection, playerSelection);
+        scoreTracker(0, 1);
     }
 }
 
 // Display Winner
 function displayWinner(winner, winnerHand, loserHand, tie = false) {
     if (tie) {
-        alert("Tie game!");
+        return alert("Tie game!");
     } else if (winner != undefined) {
-        alert(`${winner} wins! ${winnerHand.charAt(0).toUpperCase() + winnerHand.slice(1)} beats ${loserHand}!`)
+        return alert(`${winner} wins! ${winnerHand.charAt(0).toUpperCase() + winnerHand.slice(1)} beats ${loserHand}!`)
     }
 }
 
 // Score Tracker
-function scoreTracker() {
-    
+function scoreTracker(player, computer) {
+    playerScore += player;
+    computerScore += computer;
 }
 
 // Starts a single round of the game by calling compareResults
@@ -79,6 +87,7 @@ function playRound() {
     let computerSelection = computerPlay();
 
     compareResults(playerSelection, computerSelection);
+    console.log(`Player: ${playerScore} | Computer: ${computerScore}`);
 }
 
 function game() {
@@ -87,7 +96,7 @@ function game() {
     }
 }
 
-playRound();
+game();
 
 
 
