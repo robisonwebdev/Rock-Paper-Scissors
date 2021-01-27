@@ -1,4 +1,4 @@
-# Rock-Paper-Scissors
+# Rock-Paper-Scissors - [Live Preview](https://robisonwebdev.github.io/Rock-Paper-Scissors/)
 ## 01/27/2021
 - Setup a rock-paper-scissors game thats played from the console.
 - Game can be played by running game(); in command console.
