@@ -30,7 +30,7 @@ function gamePieceValidation(gamePiece) {
 // Save selection in variable
 
 function computerPlay() {
-    const gamePieces = ['Rock', 'Paper', 'Scissors'];
+    const gamePieces = ['rock', 'paper', 'scissors'];
     const random = Math.floor(Math.random() * 3);
     
     return gamePieces[random];
@@ -50,4 +50,3 @@ function playRound(playerSelections, computerSelection) {
 
 
 // playRound(playerPlay(), computerPlay());
-playerPlay()
