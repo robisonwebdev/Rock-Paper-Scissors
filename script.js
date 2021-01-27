@@ -37,22 +37,21 @@ function computerPlay() {
 // Rock beats scissors
 // Scissors beats paper
 // Paper beats rock
-
-function compareResults(playerSelections, computerSelection) {
-    if (playerSelections === computerSelection) {
+function compareResults(playerSelection, computerSelection) {
+    if (playerSelection === computerSelection) {
         displayWinner(undefined, undefined, undefined, undefined, true);
-    } else if (playerSelections === 'rock' && computerSelection === 'scissors') {
-        displayWinner('Player', playerSelections, 'Computer', computerSelection);
-    } else if (playerSelections === 'scissors' && computerSelection === 'paper') {
-        displayWinner('Player', playerSelections, 'Computer', computerSelection);
-    } else if (playerSelections === 'paper' && computerSelection === 'rock') {
-        displayWinner('Player', playerSelections, 'Computer', computerSelection);
-    } else if (computerSelection === 'rock' && playerSelections === 'scissors') {
-        displayWinner('Computer', computerSelection, 'Player', playerSelections);
-    } else if (computerSelection === 'scissors' && playerSelections === 'paper') {
-        displayWinner('Computer', computerSelection, 'Player', playerSelections);
-    } else if (computerSelection === 'paper' && playerSelections === 'rock') {
-        displayWinner('Computer', computerSelection, 'Player', playerSelections);
+    } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
+        displayWinner('Player', playerSelection, 'Computer', computerSelection);
+    } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
+        displayWinner('Player', playerSelection, 'Computer', computerSelection);
+    } else if (playerSelection === 'paper' && computerSelection === 'rock') {
+        displayWinner('Player', playerSelection, 'Computer', computerSelection);
+    } else if (computerSelection === 'rock' && playerSelection === 'scissors') {
+        displayWinner('Computer', computerSelection, 'Player', playerSelection);
+    } else if (computerSelection === 'scissors' && playerSelection === 'paper') {
+        displayWinner('Computer', computerSelection, 'Player', playerSelection);
+    } else if (computerSelection === 'paper' && playerSelection === 'rock') {
+        displayWinner('Computer', computerSelection, 'Player', playerSelection);
     }
 }
 
@@ -65,15 +64,14 @@ function displayWinner(winner, winnerHand, loser, loserHand, tie = false) {
     }
 }
 
+// Starts a single round of the game by calling compareResults
 function playRound() {
-    // Compare user/computer
     compareResults(playerPlay(), computerPlay());
-    // Display winner
 }
 
-// Display winner
+playRound();
+
+
+
 // Track score
 // Reset
-
-
-playRound();
