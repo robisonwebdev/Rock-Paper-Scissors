@@ -107,9 +107,15 @@ function game() {
     }
 
     gameWinner();
+    resetScore();
 }
 
-game();
+// game();
 
 
 // Reset
+
+function resetScore() {
+    playerScore = 0;
+    computerScore = 0;
+}
