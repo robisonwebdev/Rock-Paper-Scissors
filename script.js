@@ -3,7 +3,7 @@
 // Save selection in variable
 
 function playerPlay() {
-    return prompt('Select Rock, Paper, or Scissors');
+    return prompt('Select Rock, Paper, or Scissors').toLocaleLowerCase();
 }
 
 // Get computer input
