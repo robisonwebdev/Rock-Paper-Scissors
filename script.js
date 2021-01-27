@@ -102,6 +102,7 @@ function playRound() {
     compareResults(playerSelection, computerSelection);
 }
 
+// Start a game of 5 playRound, Displays game winner, and resets score
 function game() {
     for (let i = 0; i < 5; i++) {
         playRound();
@@ -111,12 +112,10 @@ function game() {
     resetScore();
 }
 
-// game();
-
-
 // Reset
-
 function resetScore() {
     playerScore = 0;
     computerScore = 0;
 }
+
+// game();
