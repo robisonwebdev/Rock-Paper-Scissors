@@ -22,6 +22,10 @@ function computerPlay() {
     return gamePieces[random];
 }
 
-function playSingleRound(playerSelections, computerSelection) {
+function playerPlay() {
+    return prompt('Select Rock, Paper, or Scissors');
+}
 
+function playSingleRound(playerSelections, computerSelection) {
+    
 }
