@@ -7,6 +7,49 @@
     <title>Rock Paper Scissors</title>
 </head>
 <body>
+    <div id="container">
+        <!-- Score Board -->
+        <div id="header">
+            <div id="scoreBoard">
+                <div id="playerScore"></div>
+                <div id="scoreDivider">|</div>
+                <div id="computerScore"></div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div id="main">
+            <div id="gameDisplay">
+                <div id="playerUI">
+                    <h3 class="nameDisplay"></h3>
+                    <div class="rock"></div>
+                    <div class="paper"></div>
+                    <div class="scissors"></div>
+                </div>
+                <div id="gameSetup">
+                    <form action="" id="gameInfo">
+                        <input type="text" name="playerName" id="playerName">
+                        <input type="number" name="numberOfGames" id="numberOfGames">
+                        <button type="submit" id="submit">Start Game!</button>
+                    </form>
+                </div>
+                <div id="computerUI">
+                    <h3 class="nameDisplay"></h3>
+                    <div class="rock"></div>
+                    <div class="paper"></div>
+                    <div class="scissors"></div>
+                </div>
+            </div>
+            <div id="resetDisplay">
+                <button type="reset" id="reset">Reset Game</button>
+            </div>
+        </div>
+
+        <!-- Created By -->
+        <div id="footer">
+            <small>Created by <a href="#">David Robison</a></small>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
