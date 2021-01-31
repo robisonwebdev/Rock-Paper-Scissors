@@ -56,3 +56,16 @@ body {
     flex-direction: column;
     align-items: center;
 }
+
+#playerUI, #computerUI {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 100%;
+}
+
+.las {
+    font-size: 150px;
+}
