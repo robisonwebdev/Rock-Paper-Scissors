@@ -88,9 +88,14 @@ function gameWinner() {
 
 // Score Tracker
 function scoreTracker(player, computer) {
+    const displayPlayerScore = document.querySelector('#playerScore');
+    const displayComputerScore = document.querySelector('#computerScore');
+
     playerScore += player;
     computerScore += computer;
 
+    displayPlayerScore.innerHTML = playerScore;
+    displayComputerScore.innerHTML = computerScore;
     console.log(`Player: ${playerScore} | Computer: ${computerScore}`);
 }
 
@@ -118,4 +123,5 @@ function resetScore() {
     computerScore = 0;
 }
 
+scoreTracker(playerScore, computerScore);
 // game();
