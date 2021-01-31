@@ -5,9 +5,18 @@ let computerScore = 0;
 // Get the player's input and send if off to be validated
 // Once validated, return choice
 function playerPlay() {
-    const playerChoice = prompt('Select Rock, Paper, or Scissors');    
+    // const playerChoice = prompt('Select Rock, Paper, or Scissors');  // Remove Later  
     
-    return gamePieceValidation(playerChoice);
+
+    // if (rock) {
+    //     return 'rock';
+    // } else if (paper) {
+    //     return 'paper';
+    // } else if (scissors) {
+    //     return 'scissors'
+    // }
+    
+    // return gamePieceValidation(playerChoice);
 }
 
 // Validates player input by converting to lower case 
@@ -96,7 +105,7 @@ function scoreTracker(player, computer) {
 
     displayPlayerScore.innerHTML = playerScore;
     displayComputerScore.innerHTML = computerScore;
-    console.log(`Player: ${playerScore} | Computer: ${computerScore}`);
+    console.log(`Player: ${playerScore} | Computer: ${computerScore}`);  // Remove Later
 }
 
 // Starts a single round of the game by calling compareResults
@@ -123,5 +132,23 @@ function resetScore() {
     computerScore = 0;
 }
 
-scoreTracker(playerScore, computerScore);
+
 // game();
+
+const rock = document.querySelector('#playerRock');
+const paper = document.querySelector('#playerPaper');
+const scissors = document.querySelector('#playerScissors');
+
+rock.addEventListener('click', () => {
+    compareResults('rock', computerPlay())
+});
+
+paper.addEventListener('click', () => {
+    compareResults('paper', computerPlay())
+});
+
+scissors.addEventListener('click', () => {
+    compareResults('scissors', computerPlay())
+});
+
+scoreTracker(playerScore, computerScore);
