@@ -66,6 +66,11 @@ body {
     height: 100%;
 }
 
+#playerUI .la-hand-rock, #playerUI .la-hand-paper, #computerUI .la-hand-scissors {
+    transform: scaleX(-1);
+}
+
 .las {
     font-size: 150px;
 }
+
