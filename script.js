@@ -130,6 +130,7 @@ function game() {
 function resetScore() {
     playerScore = 0;
     computerScore = 0;
+    scoreTracker(playerScore, computerScore);
 }
 
 
@@ -138,6 +139,7 @@ function resetScore() {
 const rock = document.querySelector('#playerRock');
 const paper = document.querySelector('#playerPaper');
 const scissors = document.querySelector('#playerScissors');
+const resetBtn = document.querySelector('#reset');
 
 rock.addEventListener('click', () => {
     compareResults('rock', computerPlay())
@@ -149,6 +151,11 @@ paper.addEventListener('click', () => {
 
 scissors.addEventListener('click', () => {
     compareResults('scissors', computerPlay())
+});
+
+resetBtn.addEventListener('click', () => {
+    resetScore();
+
 });
 
 scoreTracker(playerScore, computerScore);
