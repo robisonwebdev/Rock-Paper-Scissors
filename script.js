@@ -155,6 +155,17 @@ function resetScore() {
     scoreTracker(playerScore, computerScore);
 }
 
+//Reset display control
+function resetDisplay(value) {
+    const reset = document.querySelector('#reset');
+
+    if (value) {
+        reset.style.display = 'flex';
+    } else {
+        reset.style.display = 'none';
+    }
+}
+
 
 // game();
 
@@ -182,11 +193,13 @@ startBtn.addEventListener('click', () => {
     // Set display to none
     setPlayerName(nameValue.value);
     gameInfoDisplay(false);
+    resetDisplay(true);
 })
 
 resetBtn.addEventListener('click', () => {
     resetScore();
     gameInfoDisplay(true);
+    resetDisplay(false);
 });
 
 scoreTracker(playerScore, computerScore);
