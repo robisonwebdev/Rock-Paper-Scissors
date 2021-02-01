@@ -108,6 +108,17 @@ function scoreTracker(player, computer) {
     console.log(`Player: ${playerScore} | Computer: ${computerScore}`);  // Remove Later
 }
 
+// Set player name
+function setPlayerName(name) {
+    const playerName = document.querySelector('#playerName');
+
+    if (name == "") {
+        playerName.innerHTML = 'Player 1';
+    } else {
+        playerName.innerHTML = name;
+    }
+}
+
 // Starts a single round of the game by calling compareResults
 function playRound() {
     let playerSelection = playerPlay();
@@ -139,6 +150,8 @@ function resetScore() {
 const rock = document.querySelector('#playerRock');
 const paper = document.querySelector('#playerPaper');
 const scissors = document.querySelector('#playerScissors');
+const nameValue = document.querySelector('#playerNameInput');
+const startBtn = document.querySelector('#start');
 const resetBtn = document.querySelector('#reset');
 
 rock.addEventListener('click', () => {
@@ -152,6 +165,11 @@ paper.addEventListener('click', () => {
 scissors.addEventListener('click', () => {
     compareResults('scissors', computerPlay())
 });
+
+startBtn.addEventListener('click', () => {
+    // Set display to none
+    setPlayerName(nameValue.value);
+})
 
 resetBtn.addEventListener('click', () => {
     resetScore();
