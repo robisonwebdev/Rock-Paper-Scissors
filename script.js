@@ -119,14 +119,14 @@ function setPlayerName(name) {
     }
 }
 
-// gameInfo display control
-function gameInfoDisplay(value) {
-    const gameInfo = document.querySelector('#gameInfo');
+// gameSetup display control
+function gameSetupDisplay(value) {
+    const gameSetup = document.querySelector('#gameSetup');
 
     if (value) {
-        gameInfo.style.display = 'flex';
+        gameSetup.style.display = 'flex';
     } else {
-        gameInfo.style.display = 'none';
+        gameSetup.style.display = 'none';
     }
 }
 
@@ -192,13 +192,13 @@ scissors.addEventListener('click', () => {
 startBtn.addEventListener('click', () => {
     // Set display to none
     setPlayerName(nameValue.value);
-    gameInfoDisplay(false);
+    gameSetupDisplay(false);
     resetDisplay(true);
 })
 
 resetBtn.addEventListener('click', () => {
     resetScore();
-    gameInfoDisplay(true);
+    gameSetupDisplay(true);
     resetDisplay(false);
 });
 
