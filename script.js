@@ -119,6 +119,17 @@ function setPlayerName(name) {
     }
 }
 
+// gameInfo display control
+function gameInfoDisplay(value) {
+    const gameInfo = document.querySelector('#gameInfo');
+
+    if (value) {
+        gameInfo.style.display = 'flex';
+    } else {
+        gameInfo.style.display = 'none';
+    }
+}
+
 // Starts a single round of the game by calling compareResults
 function playRound() {
     let playerSelection = playerPlay();
@@ -154,6 +165,7 @@ const nameValue = document.querySelector('#playerNameInput');
 const startBtn = document.querySelector('#start');
 const resetBtn = document.querySelector('#reset');
 
+
 rock.addEventListener('click', () => {
     compareResults('rock', computerPlay())
 });
@@ -169,11 +181,12 @@ scissors.addEventListener('click', () => {
 startBtn.addEventListener('click', () => {
     // Set display to none
     setPlayerName(nameValue.value);
+    gameInfoDisplay(false);
 })
 
 resetBtn.addEventListener('click', () => {
     resetScore();
-
+    gameInfoDisplay(true);
 });
 
 scoreTracker(playerScore, computerScore);
