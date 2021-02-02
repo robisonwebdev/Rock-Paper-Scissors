@@ -4,6 +4,7 @@
 }
 
 body {
+    font-family: 'Sriracha', cursive;
     height: 100vh;
 }
 
@@ -55,6 +56,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 25px;
+
+    border: 1px solid black;
+    padding: 10px;
 }
 
 #playerUI, #computerUI {
