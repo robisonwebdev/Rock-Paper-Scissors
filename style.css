@@ -66,6 +66,13 @@ body {
     font-size: 46px;
 }
 
+#start {
+    background-color: white;
+    border: none;
+    font-family: 'Sriracha', cursive;
+    font-size: 26px;
+}
+
 .nameDisplay {
     font-size: 46px;
 }
