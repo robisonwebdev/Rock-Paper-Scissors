@@ -156,31 +156,66 @@ function resetDisplay(value) {
     }
 }
 
+// DOM
 const rock = document.querySelector('#playerRock');
+const rockIcon = document.querySelector('#playerRock i');
 const paper = document.querySelector('#playerPaper');
+const paperIcon = document.querySelector('#playerPaper i');
 const scissors = document.querySelector('#playerScissors');
+const scissorsIcon = document.querySelector('#playerScissors i');
 const nameValue = document.querySelector('#playerNameInput');
 const startBtn = document.querySelector('#start');
 const resetBtn = document.querySelector('#reset');
 
+// EventListener functions
 const rockHandler = function() {
     compareResults('rock', computerPlay());
 };
+
+const rockEnter = function() {
+    rockIcon.style.color = 'var(--red)';
+}
+
+const rockLeave = function() {
+    rockIcon.style.color = 'var(--redLight)';
+}
 
 const paperHandler = function() {
     compareResults('paper', computerPlay());
 };
 
+const paperEnter = function() {
+    paperIcon.style.color = 'var(--red)';
+}
+
+const paperLeave = function() {
+    paperIcon.style.color = 'var(--redLight)';
+}
+
 const scissorsHandler = function() {
     compareResults('scissors', computerPlay());
 };
 
+const scissorsEnter = function() {
+    scissorsIcon.style.color = 'var(--red)';
+}
+
+const scissorsLeave = function() {
+    scissorsIcon.style.color = 'var(--redLight)';
+}
+
+// EventListeners
 startBtn.addEventListener('click', () => {
-    // Set display to none
     setPlayerName(nameValue.value);
     rock.addEventListener('click', rockHandler, false);
+    rockIcon.addEventListener('mouseenter', rockEnter);
+    rockIcon.addEventListener('mouseleave', rockLeave);
     paper.addEventListener('click', paperHandler, false);
+    paperIcon.addEventListener('mouseenter', paperEnter);
+    paperIcon.addEventListener('mouseleave', paperLeave);
     scissors.addEventListener('click', scissorsHandler, false);
+    scissorsIcon.addEventListener('mouseenter', scissorsEnter);
+    scissorsIcon.addEventListener('mouseleave', scissorsLeave);
     gameSetupDisplay(false);
     resetDisplay(true);
 }, true)
@@ -188,8 +223,14 @@ startBtn.addEventListener('click', () => {
 resetBtn.addEventListener('click', () => {
     resetScore();
     rock.removeEventListener('click', rockHandler, false);
+    rockIcon.removeEventListener('mouseenter', rockEnter);
+    rockIcon.removeEventListener('mouseleave', rockLeave);
+    paperIcon.removeEventListener('mouseenter', paperEnter);
+    paperIcon.removeEventListener('mouseleave', paperLeave);
     paper.removeEventListener('click', paperHandler, false);
     scissors.removeEventListener('click', scissorsHandler, false);
+    scissorsIcon.removeEventListener('mouseenter', scissorsEnter);
+    scissorsIcon.removeEventListener('mouseleave', scissorsLeave);
     gameSetupDisplay(true);
     resetDisplay(false);
 });
