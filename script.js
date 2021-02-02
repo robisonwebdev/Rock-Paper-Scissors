@@ -138,16 +138,6 @@ function playRound() {
     compareResults(playerSelection, computerSelection);
 }
 
-// Start a game of 5 playRound, Displays game winner, and resets score
-function game() {
-    for (let i = 0; i < 5; i++) {
-        playRound();
-    }
-
-    gameWinner();
-    resetScore();
-}
-
 // Reset
 function resetScore() {
     playerScore = 0;
@@ -166,9 +156,6 @@ function resetDisplay(value) {
     }
 }
 
-
-// game();
-
 const rock = document.querySelector('#playerRock');
 const paper = document.querySelector('#playerPaper');
 const scissors = document.querySelector('#playerScissors');
@@ -176,28 +163,33 @@ const nameValue = document.querySelector('#playerNameInput');
 const startBtn = document.querySelector('#start');
 const resetBtn = document.querySelector('#reset');
 
+const rockHandler = function() {
+    compareResults('rock', computerPlay());
+};
 
-rock.addEventListener('click', () => {
-    compareResults('rock', computerPlay())
-});
+const paperHandler = function() {
+    compareResults('paper', computerPlay());
+};
 
-paper.addEventListener('click', () => {
-    compareResults('paper', computerPlay())
-});
-
-scissors.addEventListener('click', () => {
-    compareResults('scissors', computerPlay())
-});
+const scissorsHandler = function() {
+    compareResults('scissors', computerPlay());
+};
 
 startBtn.addEventListener('click', () => {
     // Set display to none
     setPlayerName(nameValue.value);
+    rock.addEventListener('click', rockHandler, false);
+    paper.addEventListener('click', paperHandler, false);
+    scissors.addEventListener('click', scissorsHandler, false);
     gameSetupDisplay(false);
     resetDisplay(true);
-})
+}, true)
 
 resetBtn.addEventListener('click', () => {
     resetScore();
+    rock.removeEventListener('click', rockHandler, false);
+    paper.removeEventListener('click', paperHandler, false);
+    scissors.removeEventListener('click', scissorsHandler, false);
     gameSetupDisplay(true);
     resetDisplay(false);
 });
