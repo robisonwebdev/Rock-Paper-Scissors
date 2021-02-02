@@ -62,6 +62,14 @@ body {
     padding: 10px;
 }
 
+#gameSetup label {
+    font-size: 46px;
+}
+
+.nameDisplay {
+    font-size: 46px;
+}
+
 #playerUI, #computerUI {
     display: flex;
     flex-direction: column;
