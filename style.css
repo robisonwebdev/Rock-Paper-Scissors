@@ -136,7 +136,20 @@ body {
     font-size: 135px;
 }
 
+#resetDisplay {
+    margin-top: 50px;
+}
+
 #reset {
     display: none;
+    background-color: var(--white);
+    border: none;
+    color: var(--redLight);
+    font-family: 'Sriracha', cursive;
+    font-size: 26px;
+}
+
+#reset:hover {
+    color: var(--red);
 }
 
