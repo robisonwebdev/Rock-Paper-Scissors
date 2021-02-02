@@ -136,10 +136,6 @@ body {
     font-size: 135px;
 }
 
-#playerRock:hover i, #playerPaper:hover i, #playerScissors:hover i {
-    color: var(--red);
-}
-
 #reset {
     display: none;
 }
