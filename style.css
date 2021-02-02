@@ -63,6 +63,11 @@ body {
     width: 100%;
 }
 
+#gameInfo {
+    margin: 0 -50px;
+    width: 100%;
+}
+
 #gameSetup {
     display: flex;
     flex-direction: column;
@@ -147,6 +152,7 @@ body {
     color: var(--redLight);
     font-family: 'Sriracha', cursive;
     font-size: 26px;
+    margin-top: -50px;
 }
 
 #reset:hover {
