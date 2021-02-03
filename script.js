@@ -2,23 +2,6 @@
 let playerScore = 0;
 let computerScore = 0;
 
-// Get the player's input and send if off to be validated
-// Once validated, return choice
-function playerPlay() {
-    // const playerChoice = prompt('Select Rock, Paper, or Scissors');  // Remove Later  
-    
-
-    // if (rock) {
-    //     return 'rock';
-    // } else if (paper) {
-    //     return 'paper';
-    // } else if (scissors) {
-    //     return 'scissors'
-    // }
-    
-    // return gamePieceValidation(playerChoice);
-}
-
 // Computer selects a random option from gamePieces array and returns it
 function computerPlay() {
     const gamePieces = ['rock', 'paper', 'scissors'];
