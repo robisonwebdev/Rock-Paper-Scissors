@@ -121,14 +121,6 @@ function buildWinnerDisplay(value) {
     }
 }
 
-// Starts a single round of the game by calling compareResults
-function playRound() {
-    let playerSelection = playerPlay();
-    let computerSelection = computerPlay();
-
-    compareResults(playerSelection, computerSelection);
-}
-
 // Reset
 function resetScore() {
     playerScore = 0;
