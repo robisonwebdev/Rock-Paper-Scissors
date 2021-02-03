@@ -54,17 +54,6 @@ function roundWinner(winner, winnerHand, loserHand, tie = false) {
     }
 }
 
-// Game winner
-function gameWinner() {
-    if (playerScore === computerScore) {
-        console.log('Tie game! No Winners');
-    } else if (playerScore > computerScore) {
-        console.log('Player wins the game!');
-    } else if (computerScore > playerScore) {
-        console.log('Computer wins the game!');
-    }
-}
-
 // Score Tracker
 function scoreTracker(player, computer) {
     const displayPlayerScore = document.querySelector('#playerScore');
@@ -75,7 +64,6 @@ function scoreTracker(player, computer) {
 
     displayPlayerScore.innerHTML = playerScore;
     displayComputerScore.innerHTML = computerScore;
-    console.log(`Player: ${playerScore} | Computer: ${computerScore}`);  // Remove Later
 }
 
 // Set player name
