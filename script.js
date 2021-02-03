@@ -11,9 +11,6 @@ function computerPlay() {
 }
 
 // Compare player input to computer input
-// Rock beats scissors
-// Scissors beats paper
-// Paper beats rock
 function compareResults(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         roundWinner(undefined, undefined, undefined, true);
