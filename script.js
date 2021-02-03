@@ -45,7 +45,6 @@ function roundWinner(winner, winnerHand, loserHand, tie = false) {
     const winDetails = document.querySelector('#winDetails');    
 
     if (tie) {
-        console.log("Tie game!");
         whoWon.textContent = 'Tie Game!';
         winDetails.textContent = 'No winners, try again!';
     } else if (winner != undefined) {
