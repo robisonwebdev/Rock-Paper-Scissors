@@ -83,7 +83,7 @@ function setPlayerName(name) {
     const playerName = document.querySelector('#playerName');
 
     if (name == "") {
-        playerName.innerHTML = 'Player 1';
+        playerName.innerHTML = 'Player';
     } else {
         playerName.innerHTML = name;
     }
@@ -215,6 +215,8 @@ resetBtn.addEventListener('click', () => {
     scissors.removeEventListener('click', scissorsHandler, false);
     scissorsIcon.removeEventListener('mouseenter', scissorsEnter);
     scissorsIcon.removeEventListener('mouseleave', scissorsLeave);
+    nameValue.value = '';
+    setPlayerName('');
     gameSetupDisplay(true);
     buildWinnerDisplay(false);
     resetDisplay(false);
