@@ -19,25 +19,6 @@ function playerPlay() {
     // return gamePieceValidation(playerChoice);
 }
 
-// Validates player input by converting to lower case 
-// and checking with switch statement, if not valid prompt again.
-function gamePieceValidation(gamePiece) {
-    while(true) {
-        gamePiece = gamePiece.toLowerCase();
-
-        switch (gamePiece) {
-            case 'rock':
-                return gamePiece;
-            case 'paper':
-                return gamePiece;
-            case 'scissors':
-                return gamePiece;
-            default:
-                gamePiece = prompt('Invalid option, pick again.');
-        }
-    }
-}
-
 // Computer selects a random option from gamePieces array and returns it
 function computerPlay() {
     const gamePieces = ['rock', 'paper', 'scissors'];
