@@ -105,8 +105,9 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    border: 1px solid black;
+    
+    font-size: 18px;
+    text-align: center;
     width: 100%;
 }
 
