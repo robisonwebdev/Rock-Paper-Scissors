@@ -173,3 +173,16 @@ body {
     color: var(--red);
 }
 
+#footer small {
+    color: var(--redLight);
+    font-size: 14px;
+}
+
+#footer small a {
+    color: var(--redLight);
+}
+
+#footer small a:hover {
+    color: var(--red);
+}
+
