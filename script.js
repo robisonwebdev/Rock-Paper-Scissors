@@ -76,12 +76,28 @@ function compareResults(playerSelection, computerSelection) {
 }
 
 // Display winner of round
-function roundWinner(winner, winnerHand, loserHand, tie = false) {
+function roundWinner(winner, winnerHand, loserHand, tie = false) {    
+    const whoWon = document.querySelector('#winner');
+    const winDetails = document.querySelector('#winDetails');    
+
     if (tie) {
-        return console.log("Tie game!");
+        console.log("Tie game!");
+        whoWon.textContent = 'Tie Game!';
+        winDetails.textContent = 'No winners, try again!';
+        return;
     } else if (winner != undefined) {
-        return console.log(`${winner} wins! ${winnerHand.charAt(0).toUpperCase() + winnerHand.slice(1)} beats ${loserHand}!`)
+        whoWon.textContent = `${winner} wins!`;
+        winDetails.textContent = `${winnerHand.charAt(0).toUpperCase() + winnerHand.slice(1)} beats ${loserHand}!`;
+        return;
     }
+
+    // if (tie) {
+    //     h3.textContent = 'Tie Game!';
+    //     p.textContent = 'No winners, try again!';
+    //     displayWinner.appendChild(h3);
+    //     displayWinner.appendChild(p);
+    //     return;
+    // }
 }
 
 // Game winner
@@ -127,6 +143,27 @@ function gameSetupDisplay(value) {
         gameSetup.style.display = 'flex';
     } else {
         gameSetup.style.display = 'none';
+    }
+}
+
+// Builds winnerDisplay
+function buildWinnerDisplay(value) {
+    const displayWinner = document.querySelector('#winnerDisplay');
+    const h3 = document.createElement('h3');
+    const p = document.createElement('p'); 
+
+    if (value) {
+        displayWinner.style.display = 'flex';
+        h3.setAttribute('id', 'winner');
+        h3.textContent = '';
+        p.setAttribute('id', 'winDetails');
+        p.textContent = 'Select Rock, Paper, or Scissors';
+        displayWinner.appendChild(h3);
+        displayWinner.appendChild(p);
+    } else {
+        document.querySelector('#winner').remove();
+        document.querySelector('#winDetails').remove();
+        displayWinner.style.display = 'none';
     }
 }
 
@@ -217,6 +254,7 @@ startBtn.addEventListener('click', () => {
     scissorsIcon.addEventListener('mouseenter', scissorsEnter);
     scissorsIcon.addEventListener('mouseleave', scissorsLeave);
     gameSetupDisplay(false);
+    buildWinnerDisplay(true);
     resetDisplay(true);
 }, true)
 
@@ -232,6 +270,7 @@ resetBtn.addEventListener('click', () => {
     scissorsIcon.removeEventListener('mouseenter', scissorsEnter);
     scissorsIcon.removeEventListener('mouseleave', scissorsLeave);
     gameSetupDisplay(true);
+    buildWinnerDisplay(false);
     resetDisplay(false);
 });
 
